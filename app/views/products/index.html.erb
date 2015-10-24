@@ -1,0 +1,37 @@
+<h1>Listing Products</h1>
+
+<table>
+	<thead>
+		<tr>
+			<td><u>Name</u></td>
+			<td><u>Description</u></td>
+			<td><u>Price</u></td>
+			<td><u>Category</u></td>
+			<td><u>Action</u></td>
+		</tr>
+	</thead>
+	<tbody>
+		<% @products.each do |product| %>
+		<tr>
+			<td><%= product.name %></td>
+			<td><%= product.description %></td>
+			<td><%= number_to_currency(product.pricing) %></td>
+
+			<td><%= product.category.name %></td>
+
+			<td>
+				<a href="/products/<%= product.id %>">SHOW</a> | 
+				<a href="/products/<%= product.id %>/edit">EDIT</a> | 
+				<form action="/products/<%= product.id %>" method="post">
+					<input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>">
+					<input type="hidden" name="_method" value="delete"><input type="submit" value="Destroy">
+				</form>
+			</td>
+		</tr>
+		<% end %>
+	</tbody>
+</table><br>
+<a href="/products/new">New Product</a><br>
+<a href="/comments">Show All Comments</a>
+
+
