@@ -1,4 +1,4 @@
-<h1>New Product</h1>
+<h1><strong><u>New Product</u></strong></h1>
 
 <%  if flash[:errors] %>
 <%  flash[:errors].each do |error|  %>
@@ -6,6 +6,7 @@
 	<%  end %>
 <%  end %>
 
+<br><br>
 
 <form action="/products" method="post">
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
@@ -26,8 +27,8 @@
 	<label for="Price">Price:</label>
 	<input type="number" step="any" name="product[pricing]" id="Price">
 
-	<input type="submit" value="Create">
+	<input class="btn btn-success" type="submit" value="Create">
 
 </form>
 
-<br><a href="/products">Go Back</a>
+<br><a href="/products"><button class="default">Go Back</button> 

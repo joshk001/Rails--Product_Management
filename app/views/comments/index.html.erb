@@ -1,6 +1,6 @@
-<h1>All Comments</h1>
+<h1><strong><u>All Comments</u></strong></h1>
 
-<table>
+<table class="table table-condensed table-responsive">
 	<thead>
 		<tr>
 			<td><u>Comments</u></td>
@@ -11,11 +11,11 @@
 		<% @comments.each do |comment| %>
 		<tr>
 			<td><%= comment.comment %> </td>
-			<td><i><%= comment.product.name %></i></td>
+			<td><%= comment.product.name %></td>
 		</tr>
 		<% end %>
 	</tbody>
 </table>
 
 <br>
-<a href="/">Go Back</a>
+<a href="/"><button class="default">Go Back</button></a>

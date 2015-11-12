@@ -1,11 +1,11 @@
-<h1>Showing <%=  @product.name %> </h1>
+<h1><strong>Showing <u><%=  @product.name %></u> </strong></h1>
 
 <p>Name: <%= @product.name  %></p>
 <p>Description: <%= @product.description  %></p>
 <p>Category: <%= @product.category.name  %></p>
 <p>Price: <%= @product.pricing  %></p>
 
-<a href="/products/<%= @product.id %>/edit">Edit</a> | <a href="/products">Back</a>
+<a href="/products/<%= @product.id %>/edit"><button class="btn btn-warning">Edit</button></a> | <a href="/products"><button class="btn btn-default">Back</button></a>
 
 <h3>Comments: </h3>
 <form method="post" action="/comments">
@@ -13,7 +13,7 @@
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	<input type="hidden" name="product_id" value="<%= @product.id %>">
 	<textarea name="comment[comment]"></textarea>
-	<input type="submit" value="Post">
+	<input class="btn btn-primary" type="submit" value="Post">
 
 </form>
 
@@ -26,7 +26,7 @@
 	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 	<input type="hidden" name="_method" value="delete">
 	<input type="hidden" name="product_id" value="<%= @product.id%>">
-	<input type="submit" value="Destroy">
+	<input class="btn btn-danger" type="submit" value="Destroy">
 
 </form>
 
